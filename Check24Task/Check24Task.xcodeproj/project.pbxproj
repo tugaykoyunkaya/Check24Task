@@ -31,6 +31,8 @@
 		086CA3A827885F1200A0531F /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086CA3A627885F1200A0531F /* ProductDetailViewController.xib */; };
 		086CA3AA27885F2900A0531F /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3A927885F2900A0531F /* ProductDetailViewModel.swift */; };
 		086CA3AC2788687500A0531F /* UserDefaults + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3AB2788687500A0531F /* UserDefaults + Extension.swift */; };
+		086CA3AE27886C7700A0531F /* ProductListTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3AD27886C7700A0531F /* ProductListTableHeader.swift */; };
+		086CA3B027886C8D00A0531F /* ProductListFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3AF27886C8D00A0531F /* ProductListFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		086CA3A627885F1200A0531F /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
 		086CA3A927885F2900A0531F /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		086CA3AB2788687500A0531F /* UserDefaults + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extension.swift"; sourceTree = "<group>"; };
+		086CA3AD27886C7700A0531F /* ProductListTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableHeader.swift; sourceTree = "<group>"; };
+		086CA3AF27886C8D00A0531F /* ProductListFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,8 @@
 				086CA39A27884A6400A0531F /* ProductAvailableTableViewCell.xib */,
 				086CA39D27884AA300A0531F /* ProductDisableTableViewCell.swift */,
 				086CA39E27884AA300A0531F /* ProductDisableTableViewCell.xib */,
+				086CA3AD27886C7700A0531F /* ProductListTableHeader.swift */,
+				086CA3AF27886C8D00A0531F /* ProductListFooterView.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -358,11 +364,13 @@
 				086CA3AC2788687500A0531F /* UserDefaults + Extension.swift in Sources */,
 				086CA3912788429500A0531F /* ApiManager.swift in Sources */,
 				086CA3A727885F1200A0531F /* ProductDetailViewController.swift in Sources */,
+				086CA3AE27886C7700A0531F /* ProductListTableHeader.swift in Sources */,
 				086CA38B278841BB00A0531F /* BaseViewModel.swift in Sources */,
 				086CA38527883F7400A0531F /* ProductListViewController.swift in Sources */,
 				086CA3AA27885F2900A0531F /* ProductDetailViewModel.swift in Sources */,
 				086CA395278843D600A0531F /* ProductListResponse.swift in Sources */,
 				086CA35427883CC000A0531F /* SceneDelegate.swift in Sources */,
+				086CA3B027886C8D00A0531F /* ProductListFooterView.swift in Sources */,
 				086CA39F27884AA300A0531F /* ProductDisableTableViewCell.swift in Sources */,
 				086CA393278842FC00A0531F /* ApiEndPoint.swift in Sources */,
 			);

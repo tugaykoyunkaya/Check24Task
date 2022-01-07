@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import SafariServices
 
 final class ProductListViewController: BaseViewController<ProductListViewModel> {
 
@@ -22,6 +23,8 @@ final class ProductListViewController: BaseViewController<ProductListViewModel> 
         tableView.delegate = self
         tableView.register(UINib(nibName: "ProductAvailableTableViewCell", bundle: nil), forCellReuseIdentifier: "AvailableCell")
         tableView.register(UINib(nibName: "ProductDisableTableViewCell", bundle: nil), forCellReuseIdentifier: "DisableCell")
+        tableView.register(ProductListTableHeader.self, forHeaderFooterViewReuseIdentifier: "header")
+        tableView.register(ProductListFooterView.self, forHeaderFooterViewReuseIdentifier: "footer")
         tableView.sectionHeaderTopPadding = 0.0
         segmentedControl.addTarget(self, action: #selector(ProductListViewController.indexChanged(_:)), for: .valueChanged)
 
@@ -46,6 +49,14 @@ final class ProductListViewController: BaseViewController<ProductListViewModel> 
         let controller = ProductDetailViewController(viewModel: viewModel)
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    private func navigateFooterPage(url: String) {
+        guard let url = URL(string: url) else {
+            return
+        }
+        let safariVC = SFSafariViewController(url: url)
+        navigationController?.present(safariVC, animated: true)
+    }
 }
 
 extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -69,5 +80,36 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigateDetailPage(product: viewModel.displayedProductList[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier:  "header") as! ProductListTableHeader
+        guard let headerSection = viewModel.headerSection else {
+            return nil
+        }
+        header.configure(firstText: headerSection.headerTitle, secendText: headerSection.headerDescription)
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard let _ = viewModel.headerSection else {
+            return 0
+        }
+        return 56
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier:  "footer") as! ProductListFooterView
+        footer.configure(text: "© 2016 Check24") { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.navigateFooterPage(url: "https://m.check24.de/rechtliche-hinweise/?deviceoutput=app")
+        }
+        return footer
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 32
     }
 }

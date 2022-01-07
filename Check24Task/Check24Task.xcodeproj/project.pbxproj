@@ -22,6 +22,10 @@
 		086CA3912788429500A0531F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3902788429500A0531F /* ApiManager.swift */; };
 		086CA393278842FC00A0531F /* ApiEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA392278842FC00A0531F /* ApiEndPoint.swift */; };
 		086CA395278843D600A0531F /* ProductListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA394278843D600A0531F /* ProductListResponse.swift */; };
+		086CA39B27884A6400A0531F /* ProductAvailableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA39927884A6400A0531F /* ProductAvailableTableViewCell.swift */; };
+		086CA39C27884A6400A0531F /* ProductAvailableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086CA39A27884A6400A0531F /* ProductAvailableTableViewCell.xib */; };
+		086CA39F27884AA300A0531F /* ProductDisableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA39D27884AA300A0531F /* ProductDisableTableViewCell.swift */; };
+		086CA3A027884AA300A0531F /* ProductDisableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086CA39E27884AA300A0531F /* ProductDisableTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		086CA3902788429500A0531F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		086CA392278842FC00A0531F /* ApiEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndPoint.swift; sourceTree = "<group>"; };
 		086CA394278843D600A0531F /* ProductListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListResponse.swift; sourceTree = "<group>"; };
+		086CA39927884A6400A0531F /* ProductAvailableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAvailableTableViewCell.swift; sourceTree = "<group>"; };
+		086CA39A27884A6400A0531F /* ProductAvailableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductAvailableTableViewCell.xib; sourceTree = "<group>"; };
+		086CA39D27884AA300A0531F /* ProductDisableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDisableTableViewCell.swift; sourceTree = "<group>"; };
+		086CA39E27884AA300A0531F /* ProductDisableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDisableTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,7 @@
 		086CA35027883CC000A0531F /* Check24Task */ = {
 			isa = PBXGroup;
 			children = (
+				086CA39727884A1C00A0531F /* ProductList */,
 				086CA3962788462B00A0531F /* Network */,
 				086CA389278841A300A0531F /* Base */,
 				086CA35127883CC000A0531F /* AppDelegate.swift */,
@@ -118,9 +127,6 @@
 				086CA35A27883CC000A0531F /* Assets.xcassets */,
 				086CA35C27883CC000A0531F /* LaunchScreen.storyboard */,
 				086CA35F27883CC000A0531F /* Info.plist */,
-				086CA38327883F7400A0531F /* ProductListViewController.swift */,
-				086CA38427883F7400A0531F /* ProductListViewController.xib */,
-				086CA38E2788420500A0531F /* ProductListViewModel.swift */,
 				086CA394278843D600A0531F /* ProductListResponse.swift */,
 			);
 			path = Check24Task;
@@ -159,6 +165,28 @@
 				086CA3902788429500A0531F /* ApiManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		086CA39727884A1C00A0531F /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				086CA39827884A2D00A0531F /* TableView */,
+				086CA38327883F7400A0531F /* ProductListViewController.swift */,
+				086CA38427883F7400A0531F /* ProductListViewController.xib */,
+				086CA38E2788420500A0531F /* ProductListViewModel.swift */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		086CA39827884A2D00A0531F /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				086CA39927884A6400A0531F /* ProductAvailableTableViewCell.swift */,
+				086CA39A27884A6400A0531F /* ProductAvailableTableViewCell.xib */,
+				086CA39D27884AA300A0531F /* ProductDisableTableViewCell.swift */,
+				086CA39E27884AA300A0531F /* ProductDisableTableViewCell.xib */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +294,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				086CA35E27883CC000A0531F /* LaunchScreen.storyboard in Resources */,
+				086CA3A027884AA300A0531F /* ProductDisableTableViewCell.xib in Resources */,
+				086CA39C27884A6400A0531F /* ProductAvailableTableViewCell.xib in Resources */,
 				086CA35B27883CC000A0531F /* Assets.xcassets in Resources */,
 				086CA38627883F7400A0531F /* ProductListViewController.xib in Resources */,
 			);
@@ -295,11 +325,13 @@
 				086CA38D278841C400A0531F /* BaseViewController.swift in Sources */,
 				086CA35227883CC000A0531F /* AppDelegate.swift in Sources */,
 				086CA38F2788420500A0531F /* ProductListViewModel.swift in Sources */,
+				086CA39B27884A6400A0531F /* ProductAvailableTableViewCell.swift in Sources */,
 				086CA3912788429500A0531F /* ApiManager.swift in Sources */,
 				086CA38B278841BB00A0531F /* BaseViewModel.swift in Sources */,
 				086CA38527883F7400A0531F /* ProductListViewController.swift in Sources */,
 				086CA395278843D600A0531F /* ProductListResponse.swift in Sources */,
 				086CA35427883CC000A0531F /* SceneDelegate.swift in Sources */,
+				086CA39F27884AA300A0531F /* ProductDisableTableViewCell.swift in Sources */,
 				086CA393278842FC00A0531F /* ApiEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

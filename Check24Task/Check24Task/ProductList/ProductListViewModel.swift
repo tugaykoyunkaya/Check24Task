@@ -10,6 +10,8 @@ import Foundation
 final class ProductListViewModel: BaseViewModel {
     
     private let apiManager = APIManager()
+    private var productList = [Product]()
+    @Published private(set) var displayedProductList = [Product]()
 
     func getProdcut() {
         apiManager.fetchData(with: ApiEndPoints.productList.url) { [weak self] (response: Result<ProductListResponse, Error>) in
@@ -18,7 +20,8 @@ final class ProductListViewModel: BaseViewModel {
             }
             switch response {
             case .success(let response):
-                print(response.products)
+                self.productList.append(contentsOf: response.products)
+                self.displayedProductList = self.productList
             case .failure(let error):
                 // TODO: Handle error case
                 print(error)

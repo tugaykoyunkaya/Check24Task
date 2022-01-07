@@ -17,8 +17,16 @@ final class ProductListViewController: BaseViewController<ProductListViewModel> 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Check24"
         
+        navigationItem.title = "Check24"
+        setupTableView()
+        bindObservables()
+        segmentedControl.addTarget(self, action: #selector(ProductListViewController.indexChanged(_:)), for: .valueChanged)
+
+        viewModel.getProdcut()
+    }
+
+    private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "ProductAvailableTableViewCell", bundle: nil), forCellReuseIdentifier: "AvailableCell")
@@ -26,12 +34,8 @@ final class ProductListViewController: BaseViewController<ProductListViewModel> 
         tableView.register(ProductListTableHeader.self, forHeaderFooterViewReuseIdentifier: "header")
         tableView.register(ProductListFooterView.self, forHeaderFooterViewReuseIdentifier: "footer")
         tableView.sectionHeaderTopPadding = 0.0
-        segmentedControl.addTarget(self, action: #selector(ProductListViewController.indexChanged(_:)), for: .valueChanged)
-
-        bindObservables()
-        viewModel.getProdcut()
     }
-
+    
     @objc func indexChanged(_ sender: UISegmentedControl) {
         viewModel.filterData(index: segmentedControl.selectedSegmentIndex)
     }
@@ -40,7 +44,10 @@ final class ProductListViewController: BaseViewController<ProductListViewModel> 
         viewModel.$displayedProductList
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                self?.tableView.reloadData()
+                guard let self = self else {
+                    return
+                }
+                self.tableView.reloadData()
             }.store(in: &subscribers)
     }
     

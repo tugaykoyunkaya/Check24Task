@@ -10,15 +10,11 @@ import Kingfisher
 
 class ProductDisableTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var itemImage: UIImageView!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var starView: UIStackView!
-    @IBOutlet weak var secondLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak private var itemImage: UIImageView!
+    @IBOutlet weak private var name: UILabel!
+    @IBOutlet weak private var starView: UIStackView!
+    @IBOutlet weak private var secondLabel: UILabel!
+
 
     func configure(item: Product) {
         name.text = item.name

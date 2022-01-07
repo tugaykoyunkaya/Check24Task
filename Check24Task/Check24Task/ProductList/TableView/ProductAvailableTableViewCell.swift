@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class ProductAvailableTableViewCell: UITableViewCell {
+final class ProductAvailableTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var itemImage: UIImageView!
     @IBOutlet private weak var date: UILabel!
@@ -16,37 +16,15 @@ class ProductAvailableTableViewCell: UITableViewCell {
     @IBOutlet private weak var price: UILabel!
     @IBOutlet private weak var starView: UIStackView!
     @IBOutlet private weak var secondLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 
     func configure(item: Product) {
-        date.text = String(item.releaseDate.getDate())
+        date.text = item.dateFormatted
         name.text = item.name
         secondLabel.text = item.description
-        price.text = item.price.getPrice()
+        price.text = item.priceFormatted
         guard let url = URL(string: item.imageURL) else {
             return
         }
         itemImage.kf.setImage(with: url)
     }
 }
-
-extension Price {
-    func getPrice() -> String {
-        String(format: "%.2f \(self.currency.rawValue)", self.value)
-    }
-}
-
-extension Int {
-    func getDate() -> String {
-        let date = Date(timeIntervalSince1970: TimeInterval(self))
-        let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateFormat = "dd.MM.YYYY"
-
-        return dateFormatter.string(from: date)
-    }
-}
-

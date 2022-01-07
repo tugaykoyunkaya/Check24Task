@@ -33,6 +33,7 @@
 		086CA3AC2788687500A0531F /* UserDefaults + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3AB2788687500A0531F /* UserDefaults + Extension.swift */; };
 		086CA3AE27886C7700A0531F /* ProductListTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3AD27886C7700A0531F /* ProductListTableHeader.swift */; };
 		086CA3B027886C8D00A0531F /* ProductListFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3AF27886C8D00A0531F /* ProductListFooterView.swift */; };
+		086CA3B22788769600A0531F /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3B12788769600A0531F /* NSObject+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		086CA3AB2788687500A0531F /* UserDefaults + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extension.swift"; sourceTree = "<group>"; };
 		086CA3AD27886C7700A0531F /* ProductListTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableHeader.swift; sourceTree = "<group>"; };
 		086CA3AF27886C8D00A0531F /* ProductListFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListFooterView.swift; sourceTree = "<group>"; };
+		086CA3B12788769600A0531F /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				086CA35C27883CC000A0531F /* LaunchScreen.storyboard */,
 				086CA35F27883CC000A0531F /* Info.plist */,
 				086CA3AB2788687500A0531F /* UserDefaults + Extension.swift */,
+				086CA3B12788769600A0531F /* NSObject+Extension.swift */,
 			);
 			path = Check24Task;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				086CA3AA27885F2900A0531F /* ProductDetailViewModel.swift in Sources */,
 				086CA395278843D600A0531F /* ProductListResponse.swift in Sources */,
 				086CA35427883CC000A0531F /* SceneDelegate.swift in Sources */,
+				086CA3B22788769600A0531F /* NSObject+Extension.swift in Sources */,
 				086CA3B027886C8D00A0531F /* ProductListFooterView.swift in Sources */,
 				086CA39F27884AA300A0531F /* ProductDisableTableViewCell.swift in Sources */,
 				086CA393278842FC00A0531F /* ApiEndPoint.swift in Sources */,

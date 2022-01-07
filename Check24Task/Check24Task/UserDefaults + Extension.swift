@@ -11,11 +11,7 @@ extension UserDefaults {
     
     func addFavourite(id: Int) {
         let userDefaults = UserDefaults.standard
-        let list = userDefaults.object(forKey: "favouriteList") as? [Int]
-        guard var list = list else {
-            userDefaults.set([id], forKey: "favouriteList")
-            return
-        }
+        var list = getFavourite()
         list.append(id)
         userDefaults.set(list, forKey: "favouriteList")
         userDefaults.synchronize()
@@ -23,28 +19,19 @@ extension UserDefaults {
     
     func deleteFavourite(id: Int) {
         let userDefaults = UserDefaults.standard
-        let list = userDefaults.object(forKey: "favouriteList") as? [Int]
-        guard var list = list else {
-            return
-        }
-        list.removeFirst(id)
+        var list = getFavourite()
+        list = list.filter { $0 != id }
         userDefaults.set(list, forKey: "favouriteList")
         userDefaults.synchronize()
     }
 
     func isFavourite(id: Int) -> Bool {
-        let userDefaults = UserDefaults.standard
-        let list = userDefaults.object(forKey: "favouriteList") as? [Int]
-        guard let list = list else {
-            return false
-        }
+        let list = getFavourite()
         return list.contains(id)
-
     }
     
-    func getFavourite() -> [Int] {
+    private func getFavourite() -> [Int] {
         let userDefaults = UserDefaults.standard
         return userDefaults.object(forKey: "favouriteList") as? [Int] ?? []
     }
-
 }

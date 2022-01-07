@@ -26,6 +26,23 @@ struct Product: Codable {
     let description, longDescription: String
     let rating: Double
     let price: Price
+    
+    var isFavourite: Bool {
+        UserDefaults.standard.isFavourite(id: id)
+    }
+    
+    var priceFormatted: String {
+        String(format: "%.2f \(price.currency.rawValue)", price.value)
+    }
+    
+    var dateFormatted: String {
+        let date = Date(timeIntervalSince1970: TimeInterval(releaseDate))
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "dd.MM.YYYY"
+
+        return dateFormatter.string(from: date)
+    }
 }
 
 struct Price: Codable {

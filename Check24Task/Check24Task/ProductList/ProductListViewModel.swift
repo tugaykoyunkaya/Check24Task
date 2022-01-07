@@ -22,7 +22,7 @@ final class ProductListViewModel: BaseViewModel {
             switch response {
             case .success(let response):
                 self.headerSection = response.header
-                self.productList.append(contentsOf: response.products)
+                self.productList = response.products
                 self.displayedProductList = self.productList
             case .failure(let error):
                 // TODO: Handle error case
@@ -53,15 +53,8 @@ final class ProductListViewModel: BaseViewModel {
     }
     
     private func favouriteData() {
-        let favouriteList = UserDefaults().getFavourite()
-        var tempList = [Product]()
-        for item in favouriteList {
-            let filtered = productList.filter { prodcut in
-                return prodcut.id == item
-            }
-            tempList.append(contentsOf: filtered)
-        }
-                            
-        displayedProductList = tempList
+        displayedProductList = productList.filter({ product in
+            product.isFavourite
+        })
     }
 }

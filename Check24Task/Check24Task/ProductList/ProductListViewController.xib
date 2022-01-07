@@ -23,7 +23,7 @@
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8Dg-D6-2Mz">
                     <rect key="frame" x="8" y="52" width="398" height="32"/>
                     <segments>
-                        <segment title="First"/>
+                        <segment title="Alle"/>
                         <segment title="Verfügbar"/>
                         <segment title="Vorgemerkt"/>
                     </segments>

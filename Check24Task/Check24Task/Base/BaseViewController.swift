@@ -23,14 +23,3 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
         super.viewDidLoad()
     }
 }
-
-extension NSObject {
-    static var bundle: Bundle {
-        return Bundle(for: Self.self)
-    }
-    
-    static var className: String {
-        return String(describing: Self.self)
-    }
-}
-

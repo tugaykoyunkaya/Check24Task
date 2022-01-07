@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductDisableTableViewCell: UITableViewCell {
 
@@ -23,7 +24,10 @@ class ProductDisableTableViewCell: UITableViewCell {
         // TODO: iamge set
         name.text = item.name
         secondLabel.text = item.description
-
+        guard let url = URL(string: item.imageURL) else {
+            return
+        }
+        itemImage.kf.setImage(with: url)
     }
     
 }

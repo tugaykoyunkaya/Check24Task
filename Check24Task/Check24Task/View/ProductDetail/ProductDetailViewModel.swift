@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 final class ProductDetailViewModel: BaseViewModel {
     let product: Product
+    let isFavouriteChanged = PassthroughSubject<Void, Never>()
 
     init(product: Product) {
         self.product = product

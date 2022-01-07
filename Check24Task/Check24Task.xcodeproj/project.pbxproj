@@ -135,17 +135,13 @@
 		086CA35027883CC000A0531F /* Check24Task */ = {
 			isa = PBXGroup;
 			children = (
-				086CA3A427885EF100A0531F /* ProductDetail */,
-				086CA39727884A1C00A0531F /* ProductList */,
-				086CA3962788462B00A0531F /* Network */,
-				086CA389278841A300A0531F /* Base */,
+				086CA3B42788862600A0531F /* Core */,
+				086CA3B32788861100A0531F /* View */,
 				086CA35127883CC000A0531F /* AppDelegate.swift */,
 				086CA35327883CC000A0531F /* SceneDelegate.swift */,
 				086CA35A27883CC000A0531F /* Assets.xcassets */,
 				086CA35C27883CC000A0531F /* LaunchScreen.storyboard */,
 				086CA35F27883CC000A0531F /* Info.plist */,
-				086CA3AB2788687500A0531F /* UserDefaults + Extension.swift */,
-				086CA3B12788769600A0531F /* NSObject+Extension.swift */,
 			);
 			path = Check24Task;
 			sourceTree = "<group>";
@@ -218,6 +214,26 @@
 				086CA3A927885F2900A0531F /* ProductDetailViewModel.swift */,
 			);
 			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		086CA3B32788861100A0531F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				086CA39727884A1C00A0531F /* ProductList */,
+				086CA3A427885EF100A0531F /* ProductDetail */,
+				086CA389278841A300A0531F /* Base */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		086CA3B42788862600A0531F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				086CA3962788462B00A0531F /* Network */,
+				086CA3B12788769600A0531F /* NSObject+Extension.swift */,
+				086CA3AB2788687500A0531F /* UserDefaults + Extension.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

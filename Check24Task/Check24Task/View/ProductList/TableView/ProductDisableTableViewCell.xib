@@ -76,8 +76,8 @@
             <connections>
                 <outlet property="itemImage" destination="5JW-zC-VVS" id="iEK-e1-ZEN"/>
                 <outlet property="name" destination="BcT-S3-aPd" id="NAW-Sc-NEe"/>
+                <outlet property="ratingStackView" destination="cTr-8s-R9w" id="qmx-Wk-bcL"/>
                 <outlet property="secondLabel" destination="D2l-a5-Lte" id="Twy-Rb-txY"/>
-                <outlet property="starView" destination="cTr-8s-R9w" id="Pn7-vK-UQx"/>
             </connections>
             <point key="canvasLocation" x="194.20289855072465" y="165.73660714285714"/>
         </tableViewCell>

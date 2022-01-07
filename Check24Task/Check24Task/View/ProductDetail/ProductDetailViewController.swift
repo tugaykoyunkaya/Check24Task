@@ -26,7 +26,10 @@ final class ProductDetailViewController: BaseViewController<ProductDetailViewMod
         } else {
             UserDefaults.standard.addFavourite(id: id)
         }
-        favourite.setTitle(UserDefaults().isFavourite(id: viewModel.product.id) ? "Vergessen" : "Vormerken", for: .normal)
+        setNameColor()
+        viewModel.isFavouriteChanged.send()
+        let buttonTitle = UserDefaults.standard.isFavourite(id: viewModel.product.id) ? "Vergessen" : "Vormerken"
+        favourite.setTitle(buttonTitle, for: .normal)
     }
     
     @IBAction func footerClick(_ sender: Any) {
@@ -44,7 +47,7 @@ final class ProductDetailViewController: BaseViewController<ProductDetailViewMod
     }
     
     private func configure() {
-        let buttonTitle = UserDefaults.standard.isFavourite(id: viewModel.product.id) ? "Delete Favourite" : "Add Favourite"
+        let buttonTitle = UserDefaults.standard.isFavourite(id: viewModel.product.id) ? "Vergessen" : "Vormerken"
         favourite.setTitle(buttonTitle, for: .normal)
         
         name.text = viewModel.product.name
@@ -52,9 +55,45 @@ final class ProductDetailViewController: BaseViewController<ProductDetailViewMod
         date.text = viewModel.product.dateFormatted
         descriptionLabel.text = viewModel.product.description
         detail.text = viewModel.product.longDescription
+        setStar(star: viewModel.product.rating)
+        setNameColor()
         guard let url = URL(string: viewModel.product.imageURL) else {
             return
         }
         imageView.kf.setImage(with: url)
+    }
+    
+    private func setNameColor(){
+        name.textColor = UserDefaults.standard.isFavourite(id: viewModel.product.id) ? .blue : .black
+    }
+    
+    private func setStar(star: Double) {
+        ratingStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+
+        for _ in 1...Int(star) {
+            let starFull = UIImage(systemName: "star.fill")
+            let imageView = UIImageView(image: starFull)
+            imageView.tintColor = .systemYellow
+            ratingStackView.addArrangedSubview(imageView)
+        }
+        
+        let reminder = star.truncatingRemainder(dividingBy: 1)
+        if reminder >= 0.5 {
+            let starHalf = UIImage(systemName: "star.leadinghalf.filled")
+            let imageView = UIImageView(image: starHalf)
+            imageView.tintColor = .systemYellow
+
+            ratingStackView.addArrangedSubview(imageView)
+        }
+        
+        if ratingStackView.arrangedSubviews.count != 5 {
+            for _ in 1...(5-ratingStackView.arrangedSubviews.count) {
+                let starEmpty = UIImage(systemName: "star")
+                let imageView = UIImageView(image: starEmpty)
+                imageView.tintColor = .systemYellow
+
+                ratingStackView.addArrangedSubview(imageView)
+            }
+        }
     }
 }

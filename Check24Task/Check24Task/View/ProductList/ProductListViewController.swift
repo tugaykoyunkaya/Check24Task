@@ -13,7 +13,9 @@ final class ProductListViewController: BaseViewController<ProductListViewModel> 
 
     @IBOutlet weak private var segmentedControl: UISegmentedControl!
     @IBOutlet weak private var tableView: UITableView!
+    
     private var subscribers = Set<AnyCancellable>()
+    private let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,7 @@ final class ProductListViewController: BaseViewController<ProductListViewModel> 
         setupTableView()
         bindObservables()
         segmentedControl.addTarget(self, action: #selector(ProductListViewController.indexChanged(_:)), for: .valueChanged)
-
+        refreshControl.addTarget(self, action: #selector(ProductListViewController.refreshData(_:)), for: .valueChanged)
         viewModel.getProdcut()
     }
 
@@ -34,10 +36,16 @@ final class ProductListViewController: BaseViewController<ProductListViewModel> 
         tableView.register(ProductListTableHeader.self, forHeaderFooterViewReuseIdentifier: "header")
         tableView.register(ProductListFooterView.self, forHeaderFooterViewReuseIdentifier: "footer")
         tableView.sectionHeaderTopPadding = 0.0
+        tableView.refreshControl = refreshControl
     }
     
     @objc func indexChanged(_ sender: UISegmentedControl) {
         viewModel.filterData(index: segmentedControl.selectedSegmentIndex)
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        segmentedControl.selectedSegmentIndex = 0
+        viewModel.getProdcut()
     }
     
     private func bindObservables() {
@@ -47,12 +55,19 @@ final class ProductListViewController: BaseViewController<ProductListViewModel> 
                 guard let self = self else {
                     return
                 }
+                self.refreshControl.endRefreshing()
                 self.tableView.reloadData()
             }.store(in: &subscribers)
     }
     
     private func navigateDetailPage(product: Product) {
         let viewModel = ProductDetailViewModel(product: product)
+        viewModel.isFavouriteChanged.sink { [weak self] _ in
+            guard let self = self else {
+                return
+            }
+            self.viewModel.filterData(index: self.segmentedControl.selectedSegmentIndex)
+        }.store(in: &subscribers)
         let controller = ProductDetailViewController(viewModel: viewModel)
         navigationController?.pushViewController(controller, animated: true)
     }

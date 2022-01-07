@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		086CA35227883CC000A0531F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA35127883CC000A0531F /* AppDelegate.swift */; };
 		086CA35427883CC000A0531F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA35327883CC000A0531F /* SceneDelegate.swift */; };
-		086CA35627883CC000A0531F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA35527883CC000A0531F /* ViewController.swift */; };
-		086CA35927883CC000A0531F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086CA35727883CC000A0531F /* Main.storyboard */; };
 		086CA35B27883CC000A0531F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086CA35A27883CC000A0531F /* Assets.xcassets */; };
 		086CA35E27883CC000A0531F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086CA35C27883CC000A0531F /* LaunchScreen.storyboard */; };
 		086CA36927883CC100A0531F /* Check24TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA36827883CC100A0531F /* Check24TaskTests.swift */; };
 		086CA37327883CC100A0531F /* Check24TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA37227883CC100A0531F /* Check24TaskUITests.swift */; };
 		086CA37527883CC100A0531F /* Check24TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA37427883CC100A0531F /* Check24TaskUITestsLaunchTests.swift */; };
+		086CA38527883F7400A0531F /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA38327883F7400A0531F /* ProductListViewController.swift */; };
+		086CA38627883F7400A0531F /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086CA38427883F7400A0531F /* ProductListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 		086CA34E27883CC000A0531F /* Check24Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Check24Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086CA35127883CC000A0531F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		086CA35327883CC000A0531F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		086CA35527883CC000A0531F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		086CA35827883CC000A0531F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		086CA35A27883CC000A0531F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		086CA35D27883CC000A0531F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		086CA35F27883CC000A0531F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +47,8 @@
 		086CA36E27883CC100A0531F /* Check24TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Check24TaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		086CA37227883CC100A0531F /* Check24TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check24TaskUITests.swift; sourceTree = "<group>"; };
 		086CA37427883CC100A0531F /* Check24TaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check24TaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		086CA38327883F7400A0531F /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		086CA38427883F7400A0531F /* ProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +101,11 @@
 			children = (
 				086CA35127883CC000A0531F /* AppDelegate.swift */,
 				086CA35327883CC000A0531F /* SceneDelegate.swift */,
-				086CA35527883CC000A0531F /* ViewController.swift */,
-				086CA35727883CC000A0531F /* Main.storyboard */,
 				086CA35A27883CC000A0531F /* Assets.xcassets */,
 				086CA35C27883CC000A0531F /* LaunchScreen.storyboard */,
 				086CA35F27883CC000A0531F /* Info.plist */,
+				086CA38327883F7400A0531F /* ProductListViewController.swift */,
+				086CA38427883F7400A0531F /* ProductListViewController.xib */,
 			);
 			path = Check24Task;
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 			files = (
 				086CA35E27883CC000A0531F /* LaunchScreen.storyboard in Resources */,
 				086CA35B27883CC000A0531F /* Assets.xcassets in Resources */,
-				086CA35927883CC000A0531F /* Main.storyboard in Resources */,
+				086CA38627883F7400A0531F /* ProductListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				086CA35627883CC000A0531F /* ViewController.swift in Sources */,
 				086CA35227883CC000A0531F /* AppDelegate.swift in Sources */,
+				086CA38527883F7400A0531F /* ProductListViewController.swift in Sources */,
 				086CA35427883CC000A0531F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +297,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		086CA35727883CC000A0531F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				086CA35827883CC000A0531F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		086CA35C27883CC000A0531F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,7 +436,6 @@
 				INFOPLIST_FILE = Check24Task/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,7 +463,6 @@
 				INFOPLIST_FILE = Check24Task/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

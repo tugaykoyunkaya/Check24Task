@@ -22,7 +22,6 @@ class ProductAvailableTableViewCell: UITableViewCell {
     }
 
     func configure(item: Product) {
-        // TODO: image set
         date.text = String(item.releaseDate.getDate())
         name.text = item.name
         secondLabel.text = item.description

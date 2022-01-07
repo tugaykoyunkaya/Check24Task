@@ -20,11 +20,17 @@ final class ProductDetailViewController: BaseViewController<ProductDetailViewMod
     @IBOutlet weak var favourite: UIButton!
     
     @IBAction func favouriteClick(_ sender: Any) {
-        
+        let id = viewModel.product.id
+        if UserDefaults().isFavourite(id: id) {
+            UserDefaults().deleteFavourite(id: id)
+        } else {
+            UserDefaults().addFavourite(id: id)
+        }
+        favourite.setTitle(UserDefaults().isFavourite(id: viewModel.product.id) ? "Vergessen" : "Vormerken", for: .normal)
     }
     
     @IBAction func footerClick(_ sender: Any) {
-        guard let url = URL(string: "https://www.hackingwithswift.com") else {
+        guard let url = URL(string: "https://m.check24.de/rechtliche-hinweise/?deviceoutput=app") else {
             return
         }
         let safariVC = SFSafariViewController(url: url)
@@ -33,12 +39,13 @@ final class ProductDetailViewController: BaseViewController<ProductDetailViewMod
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Product Detail"
+        navigationItem.title = "Check24"
+        favourite.setTitle(UserDefaults().isFavourite(id: viewModel.product.id) ? "Vergessen" : "Vormerken", for: .normal)
+
         configure()
     }
     
     private func configure() {
-        
         name.text = viewModel.product.name
         price.text = viewModel.product.price.getPrice()
         date.text = viewModel.product.releaseDate.getDate()

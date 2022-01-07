@@ -30,6 +30,7 @@
 		086CA3A727885F1200A0531F /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3A527885F1200A0531F /* ProductDetailViewController.swift */; };
 		086CA3A827885F1200A0531F /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086CA3A627885F1200A0531F /* ProductDetailViewController.xib */; };
 		086CA3AA27885F2900A0531F /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3A927885F2900A0531F /* ProductDetailViewModel.swift */; };
+		086CA3AC2788687500A0531F /* UserDefaults + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3AB2788687500A0531F /* UserDefaults + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		086CA3A527885F1200A0531F /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		086CA3A627885F1200A0531F /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
 		086CA3A927885F2900A0531F /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		086CA3AB2788687500A0531F /* UserDefaults + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +138,7 @@
 				086CA35A27883CC000A0531F /* Assets.xcassets */,
 				086CA35C27883CC000A0531F /* LaunchScreen.storyboard */,
 				086CA35F27883CC000A0531F /* Info.plist */,
-				086CA394278843D600A0531F /* ProductListResponse.swift */,
+				086CA3AB2788687500A0531F /* UserDefaults + Extension.swift */,
 			);
 			path = Check24Task;
 			sourceTree = "<group>";
@@ -172,6 +174,7 @@
 			children = (
 				086CA392278842FC00A0531F /* ApiEndPoint.swift */,
 				086CA3902788429500A0531F /* ApiManager.swift */,
+				086CA394278843D600A0531F /* ProductListResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				086CA35227883CC000A0531F /* AppDelegate.swift in Sources */,
 				086CA38F2788420500A0531F /* ProductListViewModel.swift in Sources */,
 				086CA39B27884A6400A0531F /* ProductAvailableTableViewCell.swift in Sources */,
+				086CA3AC2788687500A0531F /* UserDefaults + Extension.swift in Sources */,
 				086CA3912788429500A0531F /* ApiManager.swift in Sources */,
 				086CA3A727885F1200A0531F /* ProductDetailViewController.swift in Sources */,
 				086CA38B278841BB00A0531F /* BaseViewModel.swift in Sources */,

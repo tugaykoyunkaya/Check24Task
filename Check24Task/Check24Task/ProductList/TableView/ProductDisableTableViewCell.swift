@@ -21,7 +21,6 @@ class ProductDisableTableViewCell: UITableViewCell {
     }
 
     func configure(item: Product) {
-        // TODO: iamge set
         name.text = item.name
         secondLabel.text = item.description
         guard let url = URL(string: item.imageURL) else {

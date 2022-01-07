@@ -36,6 +36,12 @@ final class ProductListViewController: BaseViewController<ProductListViewModel> 
                 self?.tableView.reloadData()
             }.store(in: &subscribers)
     }
+    
+    private func navigateDetailPage(product: Product) {
+        let viewModel = ProductDetailViewModel(product: product)
+        let controller = ProductDetailViewController(viewModel: viewModel)
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -55,5 +61,10 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
             cell.selectionStyle = .none
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigateDetailPage(product: viewModel.displayedProductList[indexPath.row])
+
     }
 }

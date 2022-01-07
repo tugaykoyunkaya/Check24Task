@@ -27,6 +27,9 @@
 		086CA39F27884AA300A0531F /* ProductDisableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA39D27884AA300A0531F /* ProductDisableTableViewCell.swift */; };
 		086CA3A027884AA300A0531F /* ProductDisableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086CA39E27884AA300A0531F /* ProductDisableTableViewCell.xib */; };
 		086CA3A32788573000A0531F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 086CA3A22788573000A0531F /* Kingfisher */; };
+		086CA3A727885F1200A0531F /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3A527885F1200A0531F /* ProductDetailViewController.swift */; };
+		086CA3A827885F1200A0531F /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086CA3A627885F1200A0531F /* ProductDetailViewController.xib */; };
+		086CA3AA27885F2900A0531F /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3A927885F2900A0531F /* ProductDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		086CA39A27884A6400A0531F /* ProductAvailableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductAvailableTableViewCell.xib; sourceTree = "<group>"; };
 		086CA39D27884AA300A0531F /* ProductDisableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDisableTableViewCell.swift; sourceTree = "<group>"; };
 		086CA39E27884AA300A0531F /* ProductDisableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDisableTableViewCell.xib; sourceTree = "<group>"; };
+		086CA3A527885F1200A0531F /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		086CA3A627885F1200A0531F /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
+		086CA3A927885F2900A0531F /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		086CA35027883CC000A0531F /* Check24Task */ = {
 			isa = PBXGroup;
 			children = (
+				086CA3A427885EF100A0531F /* ProductDetail */,
 				086CA39727884A1C00A0531F /* ProductList */,
 				086CA3962788462B00A0531F /* Network */,
 				086CA389278841A300A0531F /* Base */,
@@ -189,6 +196,16 @@
 				086CA39E27884AA300A0531F /* ProductDisableTableViewCell.xib */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		086CA3A427885EF100A0531F /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				086CA3A527885F1200A0531F /* ProductDetailViewController.swift */,
+				086CA3A627885F1200A0531F /* ProductDetailViewController.xib */,
+				086CA3A927885F2900A0531F /* ProductDetailViewModel.swift */,
+			);
+			path = ProductDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +323,7 @@
 				086CA39C27884A6400A0531F /* ProductAvailableTableViewCell.xib in Resources */,
 				086CA35B27883CC000A0531F /* Assets.xcassets in Resources */,
 				086CA38627883F7400A0531F /* ProductListViewController.xib in Resources */,
+				086CA3A827885F1200A0531F /* ProductDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,8 +353,10 @@
 				086CA38F2788420500A0531F /* ProductListViewModel.swift in Sources */,
 				086CA39B27884A6400A0531F /* ProductAvailableTableViewCell.swift in Sources */,
 				086CA3912788429500A0531F /* ApiManager.swift in Sources */,
+				086CA3A727885F1200A0531F /* ProductDetailViewController.swift in Sources */,
 				086CA38B278841BB00A0531F /* BaseViewModel.swift in Sources */,
 				086CA38527883F7400A0531F /* ProductListViewController.swift in Sources */,
+				086CA3AA27885F2900A0531F /* ProductDetailViewModel.swift in Sources */,
 				086CA395278843D600A0531F /* ProductListResponse.swift in Sources */,
 				086CA35427883CC000A0531F /* SceneDelegate.swift in Sources */,
 				086CA39F27884AA300A0531F /* ProductDisableTableViewCell.swift in Sources */,

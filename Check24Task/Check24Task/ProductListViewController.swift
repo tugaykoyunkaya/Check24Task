@@ -7,13 +7,14 @@
 
 import UIKit
 
-final class ProductListViewController: UIViewController {
+final class ProductListViewController: BaseViewController<ProductListViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getData()
     }
-
-
-
+    
+    private func getData() {
+        viewModel.getProdcut()
+    }
 }

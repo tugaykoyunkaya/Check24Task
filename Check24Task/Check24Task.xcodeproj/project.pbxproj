@@ -16,6 +16,12 @@
 		086CA37527883CC100A0531F /* Check24TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA37427883CC100A0531F /* Check24TaskUITestsLaunchTests.swift */; };
 		086CA38527883F7400A0531F /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA38327883F7400A0531F /* ProductListViewController.swift */; };
 		086CA38627883F7400A0531F /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086CA38427883F7400A0531F /* ProductListViewController.xib */; };
+		086CA38B278841BB00A0531F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA38A278841BB00A0531F /* BaseViewModel.swift */; };
+		086CA38D278841C400A0531F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA38C278841C400A0531F /* BaseViewController.swift */; };
+		086CA38F2788420500A0531F /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA38E2788420500A0531F /* ProductListViewModel.swift */; };
+		086CA3912788429500A0531F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA3902788429500A0531F /* ApiManager.swift */; };
+		086CA393278842FC00A0531F /* ApiEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA392278842FC00A0531F /* ApiEndPoint.swift */; };
+		086CA395278843D600A0531F /* ProductListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CA394278843D600A0531F /* ProductListResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		086CA37427883CC100A0531F /* Check24TaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check24TaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		086CA38327883F7400A0531F /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		086CA38427883F7400A0531F /* ProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
+		086CA38A278841BB00A0531F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		086CA38C278841C400A0531F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		086CA38E2788420500A0531F /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		086CA3902788429500A0531F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		086CA392278842FC00A0531F /* ApiEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndPoint.swift; sourceTree = "<group>"; };
+		086CA394278843D600A0531F /* ProductListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,8 @@
 		086CA35027883CC000A0531F /* Check24Task */ = {
 			isa = PBXGroup;
 			children = (
+				086CA3962788462B00A0531F /* Network */,
+				086CA389278841A300A0531F /* Base */,
 				086CA35127883CC000A0531F /* AppDelegate.swift */,
 				086CA35327883CC000A0531F /* SceneDelegate.swift */,
 				086CA35A27883CC000A0531F /* Assets.xcassets */,
@@ -106,6 +120,8 @@
 				086CA35F27883CC000A0531F /* Info.plist */,
 				086CA38327883F7400A0531F /* ProductListViewController.swift */,
 				086CA38427883F7400A0531F /* ProductListViewController.xib */,
+				086CA38E2788420500A0531F /* ProductListViewModel.swift */,
+				086CA394278843D600A0531F /* ProductListResponse.swift */,
 			);
 			path = Check24Task;
 			sourceTree = "<group>";
@@ -125,6 +141,24 @@
 				086CA37427883CC100A0531F /* Check24TaskUITestsLaunchTests.swift */,
 			);
 			path = Check24TaskUITests;
+			sourceTree = "<group>";
+		};
+		086CA389278841A300A0531F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				086CA38A278841BB00A0531F /* BaseViewModel.swift */,
+				086CA38C278841C400A0531F /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		086CA3962788462B00A0531F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				086CA392278842FC00A0531F /* ApiEndPoint.swift */,
+				086CA3902788429500A0531F /* ApiManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +292,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				086CA38D278841C400A0531F /* BaseViewController.swift in Sources */,
 				086CA35227883CC000A0531F /* AppDelegate.swift in Sources */,
+				086CA38F2788420500A0531F /* ProductListViewModel.swift in Sources */,
+				086CA3912788429500A0531F /* ApiManager.swift in Sources */,
+				086CA38B278841BB00A0531F /* BaseViewModel.swift in Sources */,
 				086CA38527883F7400A0531F /* ProductListViewController.swift in Sources */,
+				086CA395278843D600A0531F /* ProductListResponse.swift in Sources */,
 				086CA35427883CC000A0531F /* SceneDelegate.swift in Sources */,
+				086CA393278842FC00A0531F /* ApiEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

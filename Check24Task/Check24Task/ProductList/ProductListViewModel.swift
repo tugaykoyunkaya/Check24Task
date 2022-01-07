@@ -28,4 +28,38 @@ final class ProductListViewModel: BaseViewModel {
             }
         }
     }
+    
+    func filterData(index: Int) {
+        switch index {
+        case 0:
+            displayedProductList = productList
+        case 1:
+            availableData()
+        case 2:
+            favouriteData()
+
+        default:
+            break
+        }
+    }
+    
+    private func availableData() {
+        let filtered = productList.filter { prodcut in
+            return prodcut.available == true
+        }
+        displayedProductList = filtered
+    }
+    
+    private func favouriteData() {
+        let favouriteList = UserDefaults().getFavourite()
+        var tempList = [Product]()
+        for item in favouriteList {
+            let filtered = productList.filter { prodcut in
+                return prodcut.id == item
+            }
+            tempList.append(contentsOf: filtered)
+        }
+                            
+        displayedProductList = tempList
+    }
 }

@@ -23,11 +23,15 @@ final class ProductListViewController: BaseViewController<ProductListViewModel> 
         tableView.register(UINib(nibName: "ProductAvailableTableViewCell", bundle: nil), forCellReuseIdentifier: "AvailableCell")
         tableView.register(UINib(nibName: "ProductDisableTableViewCell", bundle: nil), forCellReuseIdentifier: "DisableCell")
         tableView.sectionHeaderTopPadding = 0.0
-        
+        segmentedControl.addTarget(self, action: #selector(ProductListViewController.indexChanged(_:)), for: .valueChanged)
+
         bindObservables()
         viewModel.getProdcut()
     }
 
+    @objc func indexChanged(_ sender: UISegmentedControl) {
+        viewModel.filterData(index: segmentedControl.selectedSegmentIndex)
+    }
     
     private func bindObservables() {
         viewModel.$displayedProductList
@@ -65,6 +69,5 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigateDetailPage(product: viewModel.displayedProductList[indexPath.row])
-
     }
 }
